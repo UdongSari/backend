@@ -1,8 +1,8 @@
 package com.udongsari.account.service;
 
 
-import com.udongsari.account.dto.AccountDto;
-import com.udongsari.account.entity.Account;
+import com.udongsari.dto.AccountDto;
+import com.udongsari.entity.Account;
 import com.udongsari.account.repository.AccountRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;

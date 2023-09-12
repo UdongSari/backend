@@ -1,6 +1,7 @@
-package com.udongsari.account.entity;
+package com.udongsari.entity;
 
-import com.udongsari.account.dto.AccountDto;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.udongsari.dto.AccountDto;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -48,6 +49,49 @@ public class Account {
         }
         return new ArrayList<>();
     }
+
+    @JsonIgnore
+    @OneToMany(
+            targetEntity = User_Region.class,
+            mappedBy = "Account",
+            fetch = FetchType.LAZY
+    )
+    private List<User_Region> user_regionList;
+
+    @JsonIgnore
+    @OneToMany(
+            targetEntity = User_Thema.class,
+            mappedBy = "Account",
+            fetch = FetchType.LAZY
+    )
+    private List<User_Thema> user_themaList;
+
+    @JsonIgnore
+    @OneToMany(
+            targetEntity = User_Chatting.class,
+            mappedBy = "Account",
+            fetch = FetchType.LAZY
+    )
+    private List<User_Chatting> user_chattingList;
+
+    @JsonIgnore
+    @OneToMany(
+            targetEntity = Client_PostEntity.class,
+            mappedBy = "Account",
+            fetch = FetchType.LAZY
+    )
+    private List<Client_PostEntity> client_postEntityList;
+
+    @JsonIgnore
+    @OneToOne(
+            targetEntity = PhotoGrapher_PostEntity.class,
+            mappedBy = "Account",
+            fetch = FetchType.LAZY
+    )
+    private PhotoGrapher_PostEntity photoGrapher_postEntity;
+
+
+
 
     @Builder
     public Account(Long id, String username, String password, String name, int age, String phoneNumber, String activeRange, String roles) {

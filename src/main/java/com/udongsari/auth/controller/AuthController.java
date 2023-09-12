@@ -1,7 +1,7 @@
 package com.udongsari.auth.controller;
 
-import com.udongsari.account.dto.AccountDto;
-import com.udongsari.account.entity.Account;
+import com.udongsari.dto.AccountDto;
+import com.udongsari.entity.Account;
 import com.udongsari.auth.service.AuthService;
 import com.udongsari.configure.details.PrincipalDetails;
 import com.udongsari.exception.duplicateUsernameException;

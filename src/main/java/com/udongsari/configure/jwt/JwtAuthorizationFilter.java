@@ -2,7 +2,7 @@ package com.udongsari.configure.jwt;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
-import com.udongsari.account.entity.Account;
+import com.udongsari.entity.Account;
 import com.udongsari.account.repository.AccountRepository;
 import com.udongsari.configure.details.PrincipalDetails;
 import org.springframework.security.authentication.AuthenticationManager;

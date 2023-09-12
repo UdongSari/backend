@@ -1,6 +1,6 @@
 package com.udongsari.account.controller;
 
-import com.udongsari.account.dto.AccountDto;
+import com.udongsari.dto.AccountDto;
 import com.udongsari.account.service.AccountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
