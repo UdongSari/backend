@@ -1,0 +1,55 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.15'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'com.udongsari'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '11'
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// Database
+	implementation 'com.h2database:h2'
+
+	// Security
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
+	// Oauth2
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+
+	// Jwt
+	implementation 'com.auth0:java-jwt:3.4.1'
+
+	// Swagger
+	implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.6.9'
+
+	// Thymeleaf
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
