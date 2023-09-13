@@ -1,6 +1,6 @@
 package com.udongsari.configure.details;
 
-import com.udongsari.entity.Account;
+import com.udongsari.account.entity.Account;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 

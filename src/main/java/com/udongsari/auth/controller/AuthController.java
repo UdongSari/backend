@@ -1,8 +1,8 @@
 package com.udongsari.auth.controller;
 
-import com.udongsari.dto.AccountDto;
-import com.udongsari.entity.Account;
-import com.udongsari.auth.service.AuthService;
+import com.udongsari.account.dto.AccountDto;
+import com.udongsari.account.entity.Account;
+import com.udongsari.auth.service.AuthServiceImpl;
 import com.udongsari.configure.details.PrincipalDetails;
 import com.udongsari.exception.duplicateUsernameException;
 import lombok.RequiredArgsConstructor;
@@ -18,14 +18,14 @@ import java.util.Map;
 @RequestMapping("/api/v1")
 @RequiredArgsConstructor
 public class AuthController {
-    private final AuthService authService;
+    private final AuthServiceImpl authServiceImpl;
 
     @PostMapping("/signup")
     public ResponseEntity<Map<String, Long>> register(
             @RequestBody AccountDto accountDto
             ) {
         try {
-            Long id = authService.signUpAccount(accountDto);
+            Long id = authServiceImpl.signUpAccount(accountDto);
 
             return ResponseEntity.status(HttpStatus.OK)
                     .header("Location", "/")
