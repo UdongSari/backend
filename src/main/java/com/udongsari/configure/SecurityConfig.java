@@ -42,10 +42,10 @@ public class SecurityConfig {
 			.authorizeRequests(authorizeRequests ->
 					authorizeRequests
 							.antMatchers("/api/v1/user/**")
-							.access("hasRole('USER') or hasRole('MANAGER') or hasRole('ADMIN')")
+							.access("hasRole('USER') or hasRole('ADMIN')")
 
-							.antMatchers("/api/v1/manager/**")
-							.access("hasRole('MANAGER') or hasRole('ADMIN')")
+							.antMatchers("/api/v1/photographer/**")
+							.access("hasRole('PHOTOGRAPHER') or hasRole('ADMIN')")
 
 							.antMatchers("/api/v1/admin/**")
 							.access("hasRole('ADMIN')")
