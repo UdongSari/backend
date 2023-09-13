@@ -1,6 +1,6 @@
-package com.udongsari.account.dto;
+package com.udongsari.dto;
 
-import com.udongsari.account.entity.Account;
+import com.udongsari.entity.Account;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
