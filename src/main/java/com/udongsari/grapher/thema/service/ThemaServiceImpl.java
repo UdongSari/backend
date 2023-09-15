@@ -1,12 +1,6 @@
 package com.udongsari.grapher.thema.service;
 
 import com.udongsari.grapher.grapherDetail.entity.GrapherDetail;
-import com.udongsari.grapher.grapherDetail.repository.GrapherDetailRepository;
-import com.udongsari.grapher.region.dto.RegionDto;
-import com.udongsari.grapher.region.entity.Grapher_Region;
-import com.udongsari.grapher.region.entity.Region;
-import com.udongsari.grapher.region.repository.GrapherRegionRepository;
-import com.udongsari.grapher.region.repository.RegionRepository;
 import com.udongsari.grapher.thema.dto.ThemaDto;
 import com.udongsari.grapher.thema.entity.Grapher_Thema;
 import com.udongsari.grapher.thema.entity.Thema;
@@ -26,7 +20,7 @@ public class ThemaServiceImpl implements ThemaService {
     @Override
     public Long createThema(GrapherDetail grapherDetail, ThemaDto themaDto) {
         Thema thema = themaRepository.save(Thema.builder()
-                .themeName(themaDto.getThemeName())
+                .themaName(themaDto.getThemaName())
                 .build());
 
         grapherThemaRepository.save(Grapher_Thema.builder()

@@ -1,13 +1,13 @@
 package com.udongsari.grapher.grapherDetail.controller;
 
 import com.udongsari.configure.details.PrincipalDetails;
-import com.udongsari.exception.duplicateGrapherException;
 import com.udongsari.grapher.grapherDetail.dto.GrapherDetailDto;
+import com.udongsari.grapher.grapherDetail.dto.GrapherDetailPreviewDto;
 import com.udongsari.grapher.grapherDetail.service.GrapherDetailServiceImpl;
+import com.udongsari.grapher.region.dto.RegionDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
@@ -26,7 +26,7 @@ public class GrapherDetailController {
             @RequestBody GrapherDetailDto grapherDetailDto
     ) {
         PrincipalDetails principal = (PrincipalDetails) authentication.getPrincipal();
-
+        System.out.println(principal.getUser().getUsername());
         Long id = grapherDetailServiceImpl.createGrapher(principal.getUser(), grapherDetailDto);
 
         return ResponseEntity.ok(Collections.singletonMap("id", id));
@@ -34,7 +34,7 @@ public class GrapherDetailController {
 
     @GetMapping("/read/{id}")
     public ResponseEntity<GrapherDetailDto> readGrapher(@PathVariable("id") Long id) {
-        GrapherDetailDto grapherDetailDto = grapherDetailServiceImpl.readGrapher(id);
+        GrapherDetailDto grapherDetailDto = grapherDetailServiceImpl.showGrapherDetail(id);
 
         return ResponseEntity.ok(grapherDetailDto);
     }
@@ -44,6 +44,14 @@ public class GrapherDetailController {
         List<GrapherDetailDto> grapherDetailDtos = grapherDetailServiceImpl.readAllGrapher();
 
         return ResponseEntity.ok(grapherDetailDtos);
+    }
+
+    @PostMapping("/search")
+    public ResponseEntity<List<GrapherDetailPreviewDto>> searchGrapherBySiAndGuAndDong(@RequestBody RegionDto regionDto) {
+        List<GrapherDetailPreviewDto> grapherDetailPreviewDtos = grapherDetailServiceImpl.searchPreviewGrapher(
+                regionDto.getSi(), regionDto.getGu(), regionDto.getDong());
+
+        return ResponseEntity.ok(grapherDetailPreviewDtos);
     }
 
 }

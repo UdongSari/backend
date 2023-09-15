@@ -19,15 +19,15 @@ public class Thema {
     private Long id;
 
     @Column(name = "THEMA_NAME")
-    private String themeName;
+    private String themaName;
 
     @OneToMany(mappedBy = "thema")
     private List<Grapher_Thema> grapherThemas;
 
     @Builder
-    public Thema(Long id, String themeName, List<Grapher_Thema> grapherThemas) {
+    public Thema(Long id, String themaName, List<Grapher_Thema> grapherThemas) {
         this.id = id;
-        this.themeName = themeName;
+        this.themaName = themaName;
         this.grapherThemas = grapherThemas;
     }
 }

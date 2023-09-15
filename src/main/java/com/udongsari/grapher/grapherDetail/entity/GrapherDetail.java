@@ -37,6 +37,9 @@ public class GrapherDetail {
     @Column(name = "PRICE")
     private String price;
 
+    @Column(name = "STARS")
+    private int stars;
+
     // Di
     @OneToOne
     @JoinColumn(name = "ACCOUNT_ID")
@@ -52,10 +55,11 @@ public class GrapherDetail {
     private List<Grapher_Thema> grapherThemas  = new ArrayList<>();
 
     @Builder
-    public GrapherDetail(Long id, String snsAddress, String price, Account account, List<Portfolio> portfolios, List<Grapher_Region> grapherRegions, List<Grapher_Thema> grapherThemas) {
+    public GrapherDetail(Long id, String snsAddress, String price, int stars, Account account, List<Portfolio> portfolios, List<Grapher_Region> grapherRegions, List<Grapher_Thema> grapherThemas) {
         this.id = id;
         this.snsAddress = snsAddress;
         this.price = price;
+        this.stars = stars;
         this.account = account;
         this.portfolios = portfolios;
         this.grapherRegions = grapherRegions;
@@ -96,7 +100,7 @@ public class GrapherDetail {
 
             themaDtos.add(ThemaDto.builder()
                     .id(thema.getId())
-                    .themeName(thema.getThemeName())
+                    .themaName(thema.getThemaName())
                     .build()
             );
 
@@ -107,6 +111,7 @@ public class GrapherDetail {
                 .account_id(this.account.getId())
                 .snsAddress(this.snsAddress)
                 .price(this.price)
+                .stars(this.stars)
                 .portfolios(portfolioDtos)
                 .regions(regionDtos)
                 .themas(themaDtos)

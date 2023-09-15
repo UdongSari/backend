@@ -14,15 +14,14 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class GrapherDetailDto {
-    private Long id;
-    private Long account_id;
+public class GrapherDetailPreviewDto {
 
-    private String snsAddress;
-    private String price;
+    private Long id;
+
+    private String grapherName;
     private int stars;
 
-    private List<PortfolioDto> portfolios;
-    private List<RegionDto> regions;
-    private List<ThemaDto> themas;
+    private List<PortfolioDto> portfolioList;
+    private List<RegionDto> regionList;
+    private List<ThemaDto> themaList;
 }

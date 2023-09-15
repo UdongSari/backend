@@ -11,5 +11,5 @@ import lombok.NoArgsConstructor;
 @Builder
 public class ThemaDto {
     private Long id;
-    private String themeName;
+    private String themaName;
 }

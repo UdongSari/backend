@@ -6,7 +6,6 @@ import com.udongsari.grapher.portfolio.entity.Portfolio;
 import com.udongsari.grapher.portfolio.repository.PortfolioRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 @Service
 @RequiredArgsConstructor
