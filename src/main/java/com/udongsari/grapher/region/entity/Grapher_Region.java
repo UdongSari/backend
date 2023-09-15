@@ -2,6 +2,7 @@ package com.udongsari.grapher.region.entity;
 
 import com.udongsari.grapher.grapherDetail.entity.GrapherDetail;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -25,4 +26,11 @@ public class Grapher_Region {
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Region.class)
     @JoinColumn(name = "REGION_ID")
     private Region region;
+
+    @Builder
+    public Grapher_Region(Long id, GrapherDetail grapherDetail, Region region) {
+        this.id = id;
+        this.grapherDetail = grapherDetail;
+        this.region = region;
+    }
 }

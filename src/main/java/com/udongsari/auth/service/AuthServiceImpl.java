@@ -3,11 +3,15 @@ package com.udongsari.auth.service;
 import com.udongsari.account.dto.AccountDto;
 import com.udongsari.account.entity.Account;
 import com.udongsari.account.repository.AccountRepository;
+import com.udongsari.exception.accountNotFoundException;
 import com.udongsari.exception.duplicateUsernameException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.webjars.NotFoundException;
+
+import java.util.Optional;
 
 @Service
 @Transactional

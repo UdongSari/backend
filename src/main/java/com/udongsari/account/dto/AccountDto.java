@@ -1,14 +1,11 @@
 package com.udongsari.account.dto;
 
 import com.udongsari.account.entity.Account;
+import com.udongsari.grapher.grapherDetail.entity.GrapherDetail;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -25,13 +22,7 @@ public class AccountDto {
     private String phoneNumber;
 
     private String roles;
-
-    public List<String> getRoleList() {
-        if (this.roles.length() > 0) {
-            return Arrays.asList(this.roles.split(","));
-        }
-        return new ArrayList<>();
-    }
+    private GrapherDetail grapherDetail;
 
     public Account toEntity() {
         return Account.builder()
@@ -42,6 +33,7 @@ public class AccountDto {
                 .age(this.age)
                 .phoneNumber(phoneNumber)
                 .roles(this.roles)
+                .grapherDetail(grapherDetail)
                 .build();
     }
 }

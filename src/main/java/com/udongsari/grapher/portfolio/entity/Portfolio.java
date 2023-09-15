@@ -1,8 +1,8 @@
 package com.udongsari.grapher.portfolio.entity;
 
 import com.udongsari.grapher.grapherDetail.entity.GrapherDetail;
-import com.udongsari.grapher.region.entity.Region;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -22,6 +22,9 @@ public class Portfolio {
     @Column(name = "TITLE")
     private String imageTitle;
 
+    @Column(name = "DESCRIPTION")
+    private String imageDescription;
+
     @Column(name = "IMG_PATH")
     private String imagePath;
 
@@ -29,4 +32,13 @@ public class Portfolio {
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = GrapherDetail.class)
     @JoinColumn(name = "GRAPHER_ID")
     private GrapherDetail grapherDetail;
+
+    @Builder
+    public Portfolio(Long id, String imageTitle, String imageDescription, String imagePath, GrapherDetail grapherDetail) {
+        this.id = id;
+        this.imageTitle = imageTitle;
+        this.imageDescription = imageDescription;
+        this.imagePath = imagePath;
+        this.grapherDetail = grapherDetail;
+    }
 }

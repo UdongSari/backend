@@ -28,4 +28,13 @@ public class Region {
     // Di
     @OneToMany(mappedBy = "region")
     private List<Grapher_Region> grapherRegions;
+
+    @Builder
+    public Region(Long id, String si, String gu, String dong, List<Grapher_Region> grapherRegions) {
+        this.id = id;
+        this.si = si;
+        this.gu = gu;
+        this.dong = dong;
+        this.grapherRegions = grapherRegions;
+    }
 }

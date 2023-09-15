@@ -9,6 +9,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
 import javax.servlet.FilterChain;
@@ -56,6 +57,8 @@ public class JwtAuthorizationFilter extends BasicAuthenticationFilter {
 						principalDetails.getAuthorities());
 
 				SecurityContextHolder.getContext().setAuthentication(authentication);
+			} else {
+				throw new UsernameNotFoundException(" * 잘못된 JWT");
 			}
 		}
 

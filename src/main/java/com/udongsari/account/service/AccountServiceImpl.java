@@ -60,7 +60,7 @@ public class AccountServiceImpl implements AccountService{
 
         Account targetedAccount = targetedUserAccountOptional.get();
 
-        BeanUtils.copyProperties(accountDto, targetedAccount, "id");
+        BeanUtils.copyProperties(accountDto.toEntity(), targetedAccount, "id");
         Account updatedAccount = accountRepository.save(targetedAccount);
 
         return updatedAccount.getId();

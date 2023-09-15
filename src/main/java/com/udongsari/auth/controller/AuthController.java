@@ -36,12 +36,12 @@ public class AuthController {
         }
     }
 
-    @GetMapping("/check")
-    public ResponseEntity<Account> check(Authentication authentication) {
+
+    @GetMapping("/user/read")
+    public ResponseEntity<Account> readAccount(Authentication authentication) {
         PrincipalDetails principal = (PrincipalDetails) authentication.getPrincipal();
 
         return ResponseEntity.status(HttpStatus.OK)
                 .body(principal.getUser());
     }
-
 }

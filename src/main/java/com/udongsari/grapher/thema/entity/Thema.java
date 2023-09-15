@@ -1,6 +1,7 @@
 package com.udongsari.grapher.thema.entity;
 
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -22,4 +23,11 @@ public class Thema {
 
     @OneToMany(mappedBy = "thema")
     private List<Grapher_Thema> grapherThemas;
+
+    @Builder
+    public Thema(Long id, String themeName, List<Grapher_Thema> grapherThemas) {
+        this.id = id;
+        this.themeName = themeName;
+        this.grapherThemas = grapherThemas;
+    }
 }

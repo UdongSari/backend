@@ -2,6 +2,7 @@ package com.udongsari.grapher.thema.entity;
 
 import com.udongsari.grapher.grapherDetail.entity.GrapherDetail;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -25,4 +26,11 @@ public class Grapher_Thema {
     @ManyToOne
     @JoinColumn(name = "THEMA_ID")
     private Thema thema;
+
+    @Builder
+    public Grapher_Thema(Long id, GrapherDetail grapherDetail, Thema thema) {
+        this.id = id;
+        this.grapherDetail = grapherDetail;
+        this.thema = thema;
+    }
 }

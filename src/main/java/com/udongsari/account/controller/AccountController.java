@@ -11,7 +11,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-@RestController("/api/vi/admin/account")
+@RestController("/api/v1/admin/account")
 @RequiredArgsConstructor
 public class AccountController {
     public final AccountServiceImpl accountServiceImpl;
