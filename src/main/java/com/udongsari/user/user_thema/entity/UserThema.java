@@ -1,10 +1,12 @@
 package com.udongsari.user.user_thema.entity;
 
 
-
 import com.udongsari.grapher.thema.entity.Thema;
 import com.udongsari.user.post.entity.UserPost;
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 

@@ -1,8 +1,11 @@
 package com.udongsari.chat.service;
 
+import com.udongsari.account.repository.AccountRepository;
 import com.udongsari.chat.dto.ChatDto;
 import com.udongsari.chat.entity.Chat;
 import com.udongsari.chat.repository.ChatRepository;
+import com.udongsari.chat.repository.ChatRoomAccountRepository;
+import com.udongsari.chat.repository.ChatRoomRepository;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -16,6 +19,10 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class ChatService {
+    private final AccountRepository accountRepository;
+    private final ChatRoomAccountRepository chatRoomAccountRepository; // proxy
+    private final ChatRoomRepository chatRoomRepository;
+
     private final ChatRepository chatRepository;
 
     public void createChat(ChatDto message){
@@ -36,7 +43,6 @@ public class ChatService {
     }
 
     public List<Chat> findAllByRoomId(String roomId){
-
         return chatRepository.findAllByRoomId(roomId, Sort.by(Sort.Direction.ASC, "id"));
     }
 

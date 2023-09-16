@@ -1,7 +1,6 @@
 package com.udongsari.user.post.controller;
 
 import com.udongsari.configure.details.PrincipalDetails;
-import com.udongsari.grapher.grapherDetail.dto.GrapherDetailDto;
 import com.udongsari.grapher.region.dto.RegionDto;
 import com.udongsari.user.post.dto.UserPostDto;
 import com.udongsari.user.post.entity.UserPost;

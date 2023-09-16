@@ -1,6 +1,7 @@
 package com.udongsari.account.entity;
 
 import com.udongsari.account.dto.AccountDto;
+import com.udongsari.chat.entity.ChatRoomAccount;
 import com.udongsari.grapher.grapherDetail.entity.GrapherDetail;
 import com.udongsari.user.post.entity.UserPost;
 import lombok.AccessLevel;
@@ -55,6 +56,9 @@ public class Account {
 
     @OneToOne(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = true)
     private UserPost userPost;
+
+    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<ChatRoomAccount> chatRoomAccount;
 
     // Builder
     @Builder

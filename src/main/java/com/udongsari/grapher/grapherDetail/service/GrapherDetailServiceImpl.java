@@ -6,7 +6,6 @@ import com.udongsari.grapher.grapherDetail.dto.GrapherDetailDto;
 import com.udongsari.grapher.grapherDetail.dto.GrapherDetailPreviewDto;
 import com.udongsari.grapher.grapherDetail.entity.GrapherDetail;
 import com.udongsari.grapher.grapherDetail.repository.GrapherDetailRepository;
-import com.udongsari.grapher.portfolio.dto.PortfolioDto;
 import com.udongsari.grapher.region.dto.RegionDto;
 import com.udongsari.grapher.region.entity.Grapher_Region;
 import com.udongsari.grapher.region.entity.Region;
