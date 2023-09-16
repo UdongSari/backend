@@ -8,6 +8,7 @@ import com.udongsari.chat.service.ChatRoomDBService;
 import com.udongsari.chat.service.ChatRoomService;
 import com.udongsari.chat.service.ChatService;
 import com.udongsari.configure.details.PrincipalDetails;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
@@ -18,14 +19,14 @@ import java.util.List;
 @RestController
 @Slf4j
 @RequiredArgsConstructor
-@RequestMapping("/chat")
+@RequestMapping("/api/v1/user")
 public class ChatController {
 
     private final ChatRoomService chatRoomService;
     private final ChatRoomDBService chatRoomDBService;
     private final ChatService chatService;
 
-    @PostMapping("/joinRoom/{id}")
+    @GetMapping("/joinRoom/{id}")
     public ChatPreviewDto joinRoom(
             Authentication authentication,
             @PathVariable("id") Long targetId
@@ -42,20 +43,5 @@ public class ChatController {
         PrincipalDetails principalDetails = (PrincipalDetails) authentication.getPrincipal();
 
         return chatRoomDBService.searchMyChatRoomList(principalDetails.getUser());
-    }
-
-    @GetMapping("/AllRoom")
-    public List<ChatRoomDto> findAllRooms(){
-        return chatRoomService.findAllRoom();
-    }
-
-    @GetMapping()
-    public List<Chat> findAllChat(){
-        return chatService.findAllChat();
-    }
-
-    @GetMapping("/{roomId}")
-    public List<Chat> findAllByRoomChat(@PathVariable("roomId") String roomId){
-        return chatService.findAllByRoomId(roomId);
     }
 }
