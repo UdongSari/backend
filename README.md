@@ -11,7 +11,7 @@ jwt token을 이용한 서비스 자체 로그인, 회원가입<br/>
 아마추어 사진작가들의 포트폴리오를 열람</br>
 사진촬영을 요청하는 게시글을 작성</br>
 아마추어 사진작가들과의 실시간 채팅</br>
-등 의 기능을 제공하는 22개의 API를 제공한다.<br/>
+등 의 기능을 제공하는 22개의 API를 제공합니다.<br/>
 
 ### API 명세서 Swagger페이지
 <a href="he.princip.es/swagger-ui/index.html#"><img src="https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=Swagger&logoColor=white"></a>
