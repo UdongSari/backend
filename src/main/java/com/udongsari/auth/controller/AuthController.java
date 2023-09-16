@@ -4,7 +4,7 @@ import com.udongsari.account.dto.AccountDto;
 import com.udongsari.account.entity.Account;
 import com.udongsari.auth.service.AuthServiceImpl;
 import com.udongsari.configure.details.PrincipalDetails;
-import com.udongsari.exception.duplicateUsernameException;
+import com.udongsari.exception.DuplicateUsernameException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,7 +30,7 @@ public class AuthController {
             return ResponseEntity.status(HttpStatus.OK)
                     .header("Location", "/")
                     .body(Collections.singletonMap("id", id));
-        } catch (duplicateUsernameException e) {
+        } catch (DuplicateUsernameException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                     .body(Collections.singletonMap("id", null));
         }

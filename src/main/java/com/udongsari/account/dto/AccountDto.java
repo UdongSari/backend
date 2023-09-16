@@ -2,6 +2,7 @@ package com.udongsari.account.dto;
 
 import com.udongsari.account.entity.Account;
 import com.udongsari.grapher.grapherDetail.entity.GrapherDetail;
+import com.udongsari.user.post.entity.UserPost;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,6 +24,7 @@ public class AccountDto {
 
     private String roles;
     private GrapherDetail grapherDetail;
+    private UserPost userPost;
 
     public Account toEntity() {
         return Account.builder()
@@ -33,7 +35,8 @@ public class AccountDto {
                 .age(this.age)
                 .phoneNumber(phoneNumber)
                 .roles(this.roles)
-                .grapherDetail(grapherDetail)
+                .grapherDetail(this.grapherDetail)
+                .userPost(this.userPost)
                 .build();
     }
 }

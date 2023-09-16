@@ -3,7 +3,7 @@ package com.udongsari.auth.service;
 import com.udongsari.account.dto.AccountDto;
 import com.udongsari.account.entity.Account;
 import com.udongsari.account.repository.AccountRepository;
-import com.udongsari.exception.duplicateUsernameException;
+import com.udongsari.exception.DuplicateUsernameException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -19,7 +19,7 @@ public class AuthServiceImpl implements AuthService{
     @Override
     public Long signUpAccount(AccountDto accountDto) {
         if (accountRepository.findByUsername(accountDto.getUsername()).isPresent()){
-            throw new duplicateUsernameException(" * username 중복 됨.");
+            throw new DuplicateUsernameException(" * username 중복 됨.");
         }
 
         accountDto.setId(null);

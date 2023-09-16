@@ -1,7 +1,7 @@
 package com.udongsari.grapher.grapherDetail.service;
 
 import com.udongsari.account.entity.Account;
-import com.udongsari.exception.grapherNotFoundException;
+import com.udongsari.exception.GrapherNotFoundException;
 import com.udongsari.grapher.grapherDetail.dto.GrapherDetailDto;
 import com.udongsari.grapher.grapherDetail.dto.GrapherDetailPreviewDto;
 import com.udongsari.grapher.grapherDetail.entity.GrapherDetail;
@@ -105,7 +105,7 @@ public class GrapherDetailServiceImpl implements GrapherDetailService {
     public GrapherDetailDto showGrapherDetail(Long id) {
         Optional<GrapherDetail> grapherDetailOptional = grapherDetailRepository.findById(id);
         if (grapherDetailOptional.isEmpty()) {
-            throw new grapherNotFoundException(" * 존재하지 않는 사진작가");
+            throw new GrapherNotFoundException(" * 존재하지 않는 사진작가");
         }
 
         return grapherDetailOptional.get().toDto();
@@ -126,10 +126,6 @@ public class GrapherDetailServiceImpl implements GrapherDetailService {
     @Override
     public List<GrapherDetailPreviewDto> searchPreviewGrapher(String si, String gu, String dong){
         List<GrapherDetailPreviewDto> grapherDetailPreviewDtos = new ArrayList<>();
-
-        List<RegionDto> regionList = new ArrayList<>();
-        List<PortfolioDto> portfolioList = new ArrayList<>();
-        List<ThemaDto> themaList = new ArrayList<>();
         List<Region> regions = new ArrayList<>();
 
          if (si != null && gu != null && dong != null) { // si, gu, dong 있을 때
@@ -145,13 +141,15 @@ public class GrapherDetailServiceImpl implements GrapherDetailService {
 
             for (Grapher_Region grapherRegion : grapherRegions) {
                 GrapherDetail grapherDetail = grapherRegion.getGrapherDetail();
+                GrapherDetailDto grapherDetailDto = grapherDetail.toDto();
 
                 grapherDetailPreviewDtos.add(GrapherDetailPreviewDto.builder()
+                        .id(grapherDetail.getId())
                         .grapherName(grapherDetail.getAccount().getName())
                         .stars(grapherDetail.getStars())
-                        .regionList(regionList)
-                        .themaList(themaList)
-                        .portfolioList(portfolioList)
+                        .regionList(grapherDetailDto.getRegions())
+                        .themaList(grapherDetailDto.getThemas())
+                        .portfolioList(grapherDetailDto.getPortfolios())
                         .build());
             }
         }

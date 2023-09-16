@@ -2,6 +2,9 @@ package com.udongsari.account.entity;
 
 import com.udongsari.account.dto.AccountDto;
 import com.udongsari.grapher.grapherDetail.entity.GrapherDetail;
+import com.udongsari.grapher.portfolio.entity.Portfolio;
+import com.udongsari.user.post.dto.UserPostDto;
+import com.udongsari.user.post.entity.UserPost;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -52,9 +55,12 @@ public class Account {
     @OneToOne(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.LAZY, optional = true)
     private GrapherDetail grapherDetail;
 
+    @OneToOne(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.LAZY, optional = true)
+    private UserPost userPost;
+
     // Builder
     @Builder
-    public Account(Long id, String username, String password, String name, int age, String phoneNumber, String roles, GrapherDetail grapherDetail) {
+    public Account(Long id, String username, String password, String name, int age, String phoneNumber, String roles, GrapherDetail grapherDetail, UserPost userPost) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -63,7 +69,9 @@ public class Account {
         this.phoneNumber = phoneNumber;
         this.roles = roles;
         this.grapherDetail = grapherDetail;
+        this.userPost = userPost;
     }
+
 
     // toDto
     public AccountDto toDto() {
@@ -75,6 +83,8 @@ public class Account {
                 .age(this.age)
                 .phoneNumber(phoneNumber)
                 .roles(this.roles)
+                .grapherDetail(this.grapherDetail)
+                .userPost(this.userPost)
                 .build();
     }
 }

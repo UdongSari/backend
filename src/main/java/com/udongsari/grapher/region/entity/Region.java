@@ -1,5 +1,6 @@
 package com.udongsari.grapher.region.entity;
 
+import com.udongsari.user.user_region.entity.User_Region;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -31,6 +32,9 @@ public class Region {
     // Di
     @OneToMany(mappedBy = "region")
     private List<Grapher_Region> grapherRegions;
+
+    @OneToMany(mappedBy = "region")
+    private List<User_Region> userRegions;
 
     @Builder
     public Region(Long id, String si, String gu, String dong, List<Grapher_Region> grapherRegions) {
