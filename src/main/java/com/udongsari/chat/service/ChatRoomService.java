@@ -1,23 +1,10 @@
 package com.udongsari.chat.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.udongsari.account.entity.Account;
-import com.udongsari.account.repository.AccountRepository;
-import com.udongsari.chat.dto.ChatPreviewDto;
 import com.udongsari.chat.dto.ChatRoomDto;
-import com.udongsari.chat.dto.ChatRoomPreviewDto;
-import com.udongsari.chat.entity.Chat;
-import com.udongsari.chat.entity.ChatRoom;
-import com.udongsari.chat.entity.ChatRoomAccount;
-import com.udongsari.chat.repository.ChatRepository;
-import com.udongsari.chat.repository.ChatRoomAccountRepository;
-import com.udongsari.chat.repository.ChatRoomRepository;
-import com.udongsari.exception.AccountNotFoundException;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 
@@ -55,9 +42,6 @@ public class ChatRoomService {
         chatRooms.put(roomId, room);
         return room;
     }
-
-
-
 
     public <T> void sendMessage(WebSocketSession session, T message) {
         try {
