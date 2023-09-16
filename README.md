@@ -25,7 +25,7 @@ DataBase는 H2 를 사용<br/>
  
 ## 프로젝트 설치 및 실행 방법
 
-<br>
+
 ## 팀원 및 참고 자료
 <table>
   <tbody>
