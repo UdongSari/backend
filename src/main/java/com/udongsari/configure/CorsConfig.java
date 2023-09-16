@@ -15,13 +15,13 @@ public class CorsConfig {
       CorsConfiguration config = new CorsConfiguration();
 
       config.setAllowCredentials(true); // js 접근 허용
-      config.addAllowedOrigin("*"); // 모든 주소 접근 허용
+      config.addAllowedOrigin("http://localhost:3000"); // 모든 주소 접근 허용
       config.addAllowedHeader("*"); // 모든 헤더 접근 허용
       config.addAllowedMethod("*"); // 모든 Method(get, post, put, delete, fetch 등) 접근 허용
-
+      config.addAllowedOriginPattern("*");
+      config.addExposedHeader("Authorization");
       source.registerCorsConfiguration("/api/**", config);
 
       return new CorsFilter(source);
    }
-
 }

@@ -2,8 +2,6 @@ package com.udongsari.account.entity;
 
 import com.udongsari.account.dto.AccountDto;
 import com.udongsari.grapher.grapherDetail.entity.GrapherDetail;
-import com.udongsari.grapher.portfolio.entity.Portfolio;
-import com.udongsari.user.post.dto.UserPostDto;
 import com.udongsari.user.post.entity.UserPost;
 import lombok.AccessLevel;
 import lombok.Builder;
