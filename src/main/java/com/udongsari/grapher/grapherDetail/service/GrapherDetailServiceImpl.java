@@ -45,6 +45,7 @@ public class GrapherDetailServiceImpl implements GrapherDetailService {
 
         GrapherDetail grapherDetail = GrapherDetail.builder()
                 .snsAddress(grapherDetailDto.getSnsAddress())
+                .intro(grapherDetailDto.getIntro())
                 .price(grapherDetailDto.getPrice())
                 .stars(grapherDetailDto.getStars())
                 .account(account)
@@ -146,6 +147,7 @@ public class GrapherDetailServiceImpl implements GrapherDetailService {
                 grapherDetailPreviewDtos.add(GrapherDetailPreviewDto.builder()
                         .id(grapherDetail.getId())
                         .grapherName(grapherDetail.getAccount().getName())
+                        .intro(grapherDetailDto.getIntro())
                         .stars(grapherDetail.getStars())
                         .regionList(grapherDetailDto.getRegions())
                         .themaList(grapherDetailDto.getThemas())

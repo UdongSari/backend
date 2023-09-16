@@ -17,7 +17,7 @@ import java.util.List;
 public class UserPostDto {
     private Long id;
     private Long account_id;
-
+    private String userName;
     private String intro;
     private int price;
 

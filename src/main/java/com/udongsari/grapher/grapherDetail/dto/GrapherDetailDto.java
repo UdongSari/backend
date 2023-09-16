@@ -17,8 +17,8 @@ import java.util.List;
 public class GrapherDetailDto {
     private Long id;
     private Long account_id;
-
     private String snsAddress;
+    private String intro;
     private String price;
     private int stars;
 

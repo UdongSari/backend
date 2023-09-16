@@ -137,6 +137,7 @@ public class PostServiceImpl implements PostService{
                 userPostDtos.add(UserPostDto.builder()
                         .id(userPost.getId())
                         .account_id(userPost.getAccount().getId())
+                        .userName(userPost.getAccount().getName())
                         .intro(userPost.getIntro())
                         .price(userPost.getPrice())
                         .themaList(userPost.getThemaDtoList())

@@ -19,6 +19,7 @@ public class GrapherDetailPreviewDto {
     private Long id;
 
     private String grapherName;
+    private String intro;
     private int stars;
 
     private List<PortfolioDto> portfolioList;

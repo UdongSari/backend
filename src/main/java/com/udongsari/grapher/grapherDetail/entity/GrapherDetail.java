@@ -34,6 +34,9 @@ public class GrapherDetail {
     @Column(name = "SNS_ADDRESS")
     private String snsAddress;
 
+    @Column(name = "INTRO")
+    private String intro;
+
     @Column(name = "PRICE")
     private String price;
 
@@ -55,10 +58,11 @@ public class GrapherDetail {
     private List<Grapher_Thema> grapherThemas  = new ArrayList<>();
 
     @Builder
-    public GrapherDetail(Long id, String snsAddress, String price, int stars, Account account, List<Portfolio> portfolios, List<Grapher_Region> grapherRegions, List<Grapher_Thema> grapherThemas) {
+    public GrapherDetail(Long id, String snsAddress, String price, String intro, int stars, Account account, List<Portfolio> portfolios, List<Grapher_Region> grapherRegions, List<Grapher_Thema> grapherThemas) {
         this.id = id;
         this.snsAddress = snsAddress;
         this.price = price;
+        this.intro = intro;
         this.stars = stars;
         this.account = account;
         this.portfolios = portfolios;
@@ -111,6 +115,7 @@ public class GrapherDetail {
                 .account_id(this.account.getId())
                 .snsAddress(this.snsAddress)
                 .price(this.price)
+                .intro(this.intro)
                 .stars(this.stars)
                 .portfolios(portfolioDtos)
                 .regions(regionDtos)
