@@ -19,6 +19,9 @@ public class UserPostDto {
     private Long account_id;
     private String userName;
     private String intro;
+
+    private String startDate;
+    private String endDate;
     private int price;
 
     private List<UserPortfolioDto> portfolioList;

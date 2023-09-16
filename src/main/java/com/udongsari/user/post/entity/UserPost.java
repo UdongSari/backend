@@ -37,6 +37,12 @@ public class UserPost {
     @Column(name = "INTRO")
     private String intro;
 
+    @Column(name = "START_DATE")
+    private String startDate;
+
+    @Column(name = "END_DATE")
+    private String endDate;
+
     // Di
     @OneToOne
     @JoinColumn(name = "ACCOUNT_ID")
@@ -52,10 +58,12 @@ public class UserPost {
     private List<UserThema> ThemaThemaList;
 
     @Builder
-    public UserPost(Long id, int price, String intro, Account account, List<UserPortfolio> portfolioList, List<User_Region> ThemaRegionList, List<UserThema> ThemaThemaList) {
+    public UserPost(Long id, int price, String intro, String startDate, String endDate, Account account, List<UserPortfolio> portfolioList, List<User_Region> ThemaRegionList, List<UserThema> ThemaThemaList) {
         this.id = id;
         this.price = price;
         this.intro = intro;
+        this.startDate = startDate;
+        this.endDate = endDate;
         this.account = account;
         this.portfolioList = portfolioList;
         this.ThemaRegionList = ThemaRegionList;
@@ -67,6 +75,8 @@ public class UserPost {
                 .id(this.id)
                 .account_id(this.account.getId())
                 .intro(this.intro)
+                .startDate(this.startDate)
+                .endDate(this.endDate)
                 .price(this.price)
                 .portfolioList(getPortfolioDtoList())
                 .regionList(getRegionDtoList())

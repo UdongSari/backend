@@ -44,7 +44,10 @@ public class PostServiceImpl implements PostService{
         UserPost userPost = userPostRepository.save(UserPost.builder()
                 .account(account)
                 .intro(userPostDto.getIntro())
+                .startDate(userPostDto.getStartDate())
+                .endDate(userPostDto.getEndDate())
                 .price(userPostDto.getPrice()).build());
+
 
         List<UserPortfolioDto> userPortfolioDtoList = userPostDto.getPortfolioList();
 
@@ -140,6 +143,8 @@ public class PostServiceImpl implements PostService{
                         .userName(userPost.getAccount().getName())
                         .intro(userPost.getIntro())
                         .price(userPost.getPrice())
+                        .startDate(userPost.getStartDate())
+                        .endDate(userPost.getEndDate())
                         .themaList(userPost.getThemaDtoList())
                         .portfolioList(userPost.getPortfolioDtoList())
                         .regionList(userPost.getRegionDtoList())
