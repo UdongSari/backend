@@ -74,6 +74,7 @@ public class UserPost {
         return UserPostDto.builder()
                 .id(this.id)
                 .account_id(this.account.getId())
+                .userName(this.account.getName())
                 .intro(this.intro)
                 .startDate(this.startDate)
                 .endDate(this.endDate)

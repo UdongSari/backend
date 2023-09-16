@@ -50,10 +50,10 @@ public class Account {
     }
 
     // Di
-    @OneToOne(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.LAZY, optional = true)
+    @OneToOne(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = true)
     private GrapherDetail grapherDetail;
 
-    @OneToOne(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.LAZY, optional = true)
+    @OneToOne(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = true)
     private UserPost userPost;
 
     // Builder

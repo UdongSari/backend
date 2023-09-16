@@ -136,19 +136,19 @@ public class PostServiceImpl implements PostService{
 
             for (User_Region user_region : userRegions) {
                 UserPost userPost = user_region.getUserPost();
-
-                userPostDtos.add(UserPostDto.builder()
-                        .id(userPost.getId())
-                        .account_id(userPost.getAccount().getId())
-                        .userName(userPost.getAccount().getName())
-                        .intro(userPost.getIntro())
-                        .price(userPost.getPrice())
-                        .startDate(userPost.getStartDate())
-                        .endDate(userPost.getEndDate())
-                        .themaList(userPost.getThemaDtoList())
-                        .portfolioList(userPost.getPortfolioDtoList())
-                        .regionList(userPost.getRegionDtoList())
-                        .build());
+//                userPostDtos.add(UserPostDto.builder()
+//                        .id(userPost.getId())
+//                        .account_id(userPost.getAccount().getId())
+//                        .userName(userPost.getAccount().getName())
+//                        .intro(userPost.getIntro())
+//                        .price(userPost.getPrice())
+//                        .startDate(userPost.getStartDate())
+//                        .endDate(userPost.getEndDate())
+//                        .themaList(userPost.getThemaDtoList())
+//                        .portfolioList(userPost.getPortfolioDtoList())
+//                        .regionList(userPost.getRegionDtoList())
+//                        .build());
+                userPostDtos.add(userPost.toDto());
             }
         }
 

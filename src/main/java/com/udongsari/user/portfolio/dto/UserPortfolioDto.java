@@ -13,5 +13,4 @@ public class UserPortfolioDto {
     private Long id;
     private String imageTitle;
     private String imagePath;
-    private Long post_id;
 }
