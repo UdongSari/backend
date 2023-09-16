@@ -1,9 +1,8 @@
 package com.udongsari.account.entity;
 
 import com.udongsari.account.dto.AccountDto;
+import com.udongsari.chat.entity.ChatRoomAccount;
 import com.udongsari.grapher.grapherDetail.entity.GrapherDetail;
-import com.udongsari.grapher.portfolio.entity.Portfolio;
-import com.udongsari.user.post.dto.UserPostDto;
 import com.udongsari.user.post.entity.UserPost;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -52,11 +51,14 @@ public class Account {
     }
 
     // Di
-    @OneToOne(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.LAZY, optional = true)
+    @OneToOne(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private GrapherDetail grapherDetail;
 
-    @OneToOne(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.LAZY, optional = true)
+    @OneToOne(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private UserPost userPost;
+
+    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<ChatRoomAccount> chatRoomAccount;
 
     // Builder
     @Builder

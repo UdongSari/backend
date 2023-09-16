@@ -2,7 +2,10 @@ package com.udongsari.user.user_region.entity;
 
 import com.udongsari.grapher.region.entity.Region;
 import com.udongsari.user.post.entity.UserPost;
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 

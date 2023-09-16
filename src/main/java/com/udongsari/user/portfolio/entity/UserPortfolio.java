@@ -1,8 +1,10 @@
 package com.udongsari.user.portfolio.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.udongsari.user.post.entity.UserPost;
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
