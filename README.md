@@ -17,11 +17,14 @@ jwt token을 이용한 서비스 자체 로그인, 회원가입<br/>
 <a href="he.princip.es/swagger-ui/index.html#"><img src="https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=Swagger&logoColor=white"></a>
 
 ### 사용된 기술
-<img src="https://img.shields.io/badge/Spring Boot-6DB33F?style=for-the-badge&logo=Spring Boot&logoColor=white">  <img src="https://img.shields.io/badge/H2-2962FF?style=for-the-badge&logo=Hack Club&logoColor=white">  <img src="https://img.shields.io/badge/Amazon EC2-FF9900?style=for-the-badge&logo=Amazon EC2&logoColor=white"> 
+<img width="1451" alt="스크린샷 2023-09-18 오전 12 46 05" src="https://github.com/UdongSari/backend/assets/67568334/1358e082-235c-4dbf-b635-2900741c987e">
 
-AWS EC2 인스턴스를 사용하여 배포</br>
-Spring Boot 로 비즈니스 로직을 구현</br>
-DataBase는 H2 를 사용<br/>
+Frontend: React
+Backend: Spring Boot, Express
+DataBase: MySQL
+etc: Nginx, Docker
+
+Server: AWS Medium EC2
  
 ## 프로젝트 설치 및 실행 방법
 
