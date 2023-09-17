@@ -19,12 +19,12 @@ jwt token을 이용한 서비스 자체 로그인, 회원가입<br/>
 ### 사용된 기술
 <img width="1451" alt="스크린샷 2023-09-18 오전 12 46 05" src="https://github.com/UdongSari/backend/assets/67568334/1358e082-235c-4dbf-b635-2900741c987e">
 
-Frontend: React
-Backend: Spring Boot, Express
-DataBase: MySQL
-etc: Nginx, Docker
-
-Server: AWS Medium EC2
+Frontend: React</br>
+Backend: Spring Boot, Express</br>
+DataBase: MySQL</br>
+etc: Nginx, Docker</br>
+</br>
+Server: AWS Medium EC2</br>
  
 ## 프로젝트 설치 및 실행 방법
 
